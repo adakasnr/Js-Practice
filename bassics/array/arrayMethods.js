@@ -37,4 +37,47 @@ console.log("arrayMethod filter", filter);
 const found = arrayWithEven.find((element) => element > 10)
 console.log("arrayMeyhod find",found);
 
-// findIndex- 
+// findIndex-
+
+// flat - it crestes new array with all sub array elements concatened into it.
+const subArray = [1,2,[4,5]]
+console.log("flat",subArray.flat())
+
+// forEach- provided function once for each array element. ?
+array1.forEach((element) => console.log(element));
+
+// form()-
+// includes()-it gives new array
+// indexOf()-it gives index of the element
+console.log("indexOf",array.indexOf("element3"));
+
+// join()-it joins the all elements of the array and returns new array in one string or separate 
+console.log("join",array.join());
+console.log("join",array.join('')); //in one string
+console.log("join",array.join('-')); // with separater
+
+// iterator-it defines the no of times that loop turns
+// keys
+console.log("keys",array.keys());
+const iterator = array.keys();
+for (const key of iterator) {
+    console.log(key);
+}
+
+
+// pop()-it removes the last element of array 
+
+
+// push
+// nap
+// refuse
+// server
+// reverse
+
+// shift
+// slice
+// some
+// splice
+// unshift
+// values
+// sort
