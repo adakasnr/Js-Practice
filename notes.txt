@@ -1,0 +1,22 @@
+// --for in-line comment
+/* comment */  -- for multiline comment
+
+data types
+undefined-- not defined yet 
+null--nothing 
+boolean--true or false
+string--text written in single or double qoutes
+symbol 
+number--that is a number
+object--it can store lots of key values pairs
+
+we keep data into a variable 
+variable allows a computer to store and maniplate data
+to declare variable we use key wards those are var,let and const
+let- is only be used within scope of where we declared  
+var- is a global one we can use that variable in entire code
+const- is not changable(we can not change that variable value) 
+
+declaring variables and assigning variables is different 
+
+console.log allows us to see things in the console 
