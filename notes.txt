@@ -5,7 +5,7 @@ data types
 undefined-- not defined yet 
 null--nothing 
 boolean--true or false
-string--text written in single or double qoutes
+string--text written in single or double qoutes or back ticks
 symbol 
 number--that is a number
 object--it can store lots of key values pairs
