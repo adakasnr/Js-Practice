@@ -325,7 +325,19 @@ console.log(isMore(10,15))
 
 // Counting cards Project
 
+// anonymous function- it does not have a name, it is assigned to a variable called magic
+var magic = function (params) {
+    return new Date();
+};
 
+// Arrow functions-> we do not need return & curly braces
+var magic = () => new Data();  // it is same as above function
+
+// Arrow functions with Parameters
+var myConcat = (arr1,arr2) => arr1.concat(arr2)
+console.log(myConcat([1,2],[3,4,5])); // we hvae paased 2 arrays as arguments 
+
+//Higher order Arrow functions
 
 
 

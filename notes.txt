@@ -15,8 +15,20 @@ variable allows a computer to store and maniplate data
 to declare variable we use key wards those are var,let and const
 let- is only be used within scope of where we declared  
 var- is a global one we can use that variable in entire code
-const- is not changable(we can not change that variable value) 
+const- is not changable(we can not change that variable value)
+       if we declare a variable with the const keyward we can not reassign it afterwards 
 
+let & const are using since ES6 2015
 declaring variables and assigning variables is different 
 
+we can not declare same variable by two times in the scope
+ 
 console.log allows us to see things in the console 
+
+use strict -it enables strict mode which catches common mistakes and unsafe actions,
+            everyOne uses "use Strict" at top of a full javascript of in a function to catch coding mistakes,such as if we create a variable and do not declare it with var,let or const 
+
+major differnce b/w var & let keyWords
+var-> when we declare a variable with var it is declared globally or locally if declared inside a function             
+let-> the scope of let is limited to the block statement or expression that it was declared in.
+ 
