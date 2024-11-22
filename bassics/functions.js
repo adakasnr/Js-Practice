@@ -289,9 +289,9 @@ console.log(golfScore(10, 15));
 // switch statment is easier to write and understand than a chain of if else statments  
 
 function caseInSwitch(val) {
-    var answer ="";        // it is an 
+    var answer = "";        // it is an 
     switch (val) {
-        case 1 :
+        case 1:
             answer = "alpha";
             break;         // it cut the code to run if case get matched, if there is no break it will keep going to the next one automatically
         case 2:
@@ -306,20 +306,20 @@ function caseInSwitch(val) {
 console.log(caseInSwitch(2));
 
 // Returnig boolean values from the function
-function isLess(a,b) {
-    if (a<b) {
+function isLess(a, b) {
+    if (a < b) {
         return true;
-    } else{
+    } else {
         return false;
     }
 }
-console.log(isLess(10,15))
+console.log(isLess(10, 15))
 
 // insted of the above if statment we write like this for boolean values
-function isMore(a,b) {
-    return a>b
+function isMore(a, b) {
+    return a > b
 }
-console.log(isMore(10,15))
+console.log(isMore(10, 15))
 
 // Return early pattern for functons?
 
@@ -333,12 +333,45 @@ var magic = function (params) {
 // Arrow functions-> we do not need return & curly braces
 var magic = () => new Data();  // it is same as above function
 
-// Arrow functions with Parameters
-var myConcat = (arr1,arr2) => arr1.concat(arr2)
-console.log(myConcat([1,2],[3,4,5])); // we hvae paased 2 arrays as arguments 
+// Arrow functions with Parameters - arrow functon does not have functoin keyward
+var myConcat = (arr1, arr2) => arr1.concat(arr2)
+console.log(myConcat([1, 2], [3, 4, 5])); // we hvae paased 2 arrays as arguments 
 
 //Higher order Arrow functions
+/*Arrow functions works really well with higher order functions such as map,filter and reduce,They take functions as arguments for processing collections of data.
+  whenever one function takes another function as an argument, that's a good time to use an arrow function
+
+const realNumberArray = [4,5.6,-9.8,3.14,42,6,8.34,-2]
+
+const squareList = (arr) => {
+    const squredIntegers = arr;
+    return squredIntegers;
+};
+
+const squredIntegers = squareList (realNumberArray)
+console.log(squredIntegers);
+*/ //?
+
+//Default Parameters- it will consider when the argument is not specified or is undefined
+
+const increment = (function () {
+    console.log('IIFE assigned');
+    
+    return function increment(number, value = 2) {//we can give default values to all theparameters
+        console.log("Inside function");
+        
+        return number + value
+    }
+})();
+
+(function () {
+    console.log("defaut calling functoip");
+    
+})();
 
 
+console.log("increment: " + increment(5)); // as per the requirement we have to pass 2 arguments,these arguments will be considerd 
+// if we pass only one argument then the function do not work as it reqiure 2 arguments
+// if we give default values in parenthesiss, even if we dont pass values then based on the defaults it will run 
 
 
