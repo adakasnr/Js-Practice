@@ -53,8 +53,8 @@ var myPlant = [
       ]
    },
    {
-      type :"trees",
-      list:[
+      type: "trees",
+      list: [
          "fir",
          "pine",
          "birch"
@@ -65,14 +65,28 @@ var myPlant = [
 console.log(myPlant[1].list[0]); //arrays are accessed with index 
 
 // mutate an array declared with const
-const s = [1,3,5,7]
+const s = [1, 3, 5, 7]
 // Array.freeze(s) not working
 function editInPlace() {
    "use strict";
-   s[0]=2,
-   s[1]=4,
-   s[2]=6,
-   s[3]=8
+   s[0] = 2,
+      s[1] = 4,
+      s[2] = 6,
+      s[3] = 8
 }
 editInPlace()
 console.log(s);
+
+var numbers = [1, 2, 3, 4, 5]
+var sum = 0
+function addition(numbers) {
+   i = 0
+   while (i < numbers.length) {
+      sum = sum + numbers[i]
+      i++
+   }
+   return sum
+}
+console.log(addition(numbers));
+
+// console.log("addition",sum);

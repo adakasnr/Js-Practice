@@ -354,24 +354,52 @@ console.log(squredIntegers);
 
 //Default Parameters- it will consider when the argument is not specified or is undefined
 
-const increment = (function () {
-    console.log('IIFE assigned');
-    
-    return function increment(number, value = 2) {//we can give default values to all theparameters
-        console.log("Inside function");
-        
+const increment = (function () {  //increment is the function name  
+    return function (number, value = 2) {//we can give default values to all the parameters
         return number + value
     }
 })();
 
-(function () {
-    console.log("defaut calling functoip");
-    
-})();
-
-
 console.log("increment: " + increment(5)); // as per the requirement we have to pass 2 arguments,these arguments will be considerd 
-// if we pass only one argument then the function do not work as it reqiure 2 arguments
-// if we give default values in parenthesiss, even if we dont pass values then based on the defaults it will run 
+/* The 1st argument will be considerd to first parameter only and goes on, if we pass only one argument then the function do not work as it reqiure 2 arguments
+if we give default values in parenthesiss, even if we dont pass values then based on the defaults it will run 
+*/
 
+//Imediatly Invoked Function Expression(IIFE)-it runs as soon as it is defined
+// syntax
+(function () {
+    console.log("default calling function");
+})();
+/*
+Funtion Expression: funtion is defined inside the parenthese() so that js treats it as an expression(not a declaration)
+Invocation:After the function expression, the () immediately calls the function
+*/
+
+//Rest Operator(...)-it allows you to create a function that takes a variable number of arguments
+const sum = (function () {
+    return function addition(x, y, z) {
+        const args = [x, y, z];
+        return args.reduce((a, b) => a + b, 0) // a-cumilative value
+    }
+})();
+console.log("sum: " + sum(1, 2, 3)); //the functionName(sum) we can call function with that name only
+console.log("addition: " + addition(1, 2, 3)); //(addition) what we have mentioned before the parenthisis is not function name and we do not actually need not to mention that addition there, if we want we can mention the same funtion name otherwise no need too
+
+// Rest Operator(...) Syntax- it reduces the above code
+const sumWithRestOperator = (function () {
+    return function sum(...args) {
+        // const args = [x, y, z]; that rest operator will convert everything that's passed as arguments into a array, so this array line is not required
+        return args.reduce((a, b) => a + b, 0)
+    }
+})();
+console.log("sumWithRestOperator: ", sumWithRestOperator(1, 2, 3, 4));
+
+// Spread Operator- it spreads out an array, it takes an array and spreads it out into its individual parts
+const arr1 = ["jan", "feb", "march", "april", "may"];
+let arr2;
+(function () {
+    arr2 = [...arr1];
+    arr1[0] = "potato"
+})();
+console.log(arr2);
 
