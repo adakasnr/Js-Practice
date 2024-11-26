@@ -1,3 +1,6 @@
+"use strict";
+
+
 //array - array is used to store more no of data at one place 
 var familyMembers = ["Sriman", "Siva", "mahesh", "Jai"]
 var familyMembersAge = [25, 27, 22, 19]
@@ -80,7 +83,7 @@ console.log(s);
 var numbers = [1, 2, 3, 4, 5]
 var sum = 0
 function addition(numbers) {
-   i = 0
+   let i = 0
    while (i < numbers.length) {
       sum = sum + numbers[i]
       i++
@@ -90,3 +93,48 @@ function addition(numbers) {
 console.log(addition(numbers));
 
 // console.log("addition",sum);
+
+// Destructuring Assignment to Assign Variables Arrays
+const [z, x, , y] = [1, 2, 3, 4, 5, 6] // the space couts as a variable and assigns the index 3 value
+console.log(z, x, y); // Output = 1,2,4
+
+let a = 8
+let b = 6;
+(() => {
+   [a, b] = [b, a]
+})();
+
+console.log(a);
+console.log(b);
+
+// Destructuring Assignment with the Rest Operator
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+function removeFirstTwo(list) {
+   const [, , ...arr] = list; // ,,-> these 2 will 
+   return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); //Output [3, 4, 5,  6, 7, 8, 9, 10]
+
+// Destructuring Assignment to Pass an Object as a Function's Parameters
+const stats = {
+   max: 56.78,
+   standerd_deviation: 4.34,
+   median: 34.54,
+   mode: 23.87,
+   min: -0.75,
+   average: 35.85
+};
+
+const half = (function () {
+      //return function half(stats) {
+      //return (stats.max+stats.min)/2.0;    //accessing object data 
+      return function half({max, min}) {    //accessing object data with destructuring
+      return (max + min) / 2.0;  
+   };
+})();
+
+// console.log(stats);
+console.log(half(stats));
+
+//The above processes is commonly used with API calls, When we getting information from Ajax request or an API request

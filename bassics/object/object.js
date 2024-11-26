@@ -1,6 +1,6 @@
 // object is one of the javascript datatype, it is used to store various keyed collections(keys(properties) with values)
 // syntax to create object
-const car ={
+export const superCar ={
     steering: "power",
     brakking: "hydralic",
     engine: {
@@ -10,15 +10,15 @@ const car ={
 } 
 // accessing object properties
 // objectName.propertyName then we will get value
-car.brakking
-console.log(car.brakking);
-console.log(car.engine.noOfCylinder);  // accessing nested property
+superCar.brakking
+console.log(superCar.brakking);
+console.log(superCar.engine.noOfCylinder);  // accessing nested property
 
 // assigining new value to object 
-car.brakking=42
-console.log(car);
+superCar.brakking=42
+console.log(superCar);
 
 // calling object methods- method is a predefined function which perform perticular task,they are used to define the behavior of an object  
-Object.assign(car)
+Object.assign(superCar)
 
 

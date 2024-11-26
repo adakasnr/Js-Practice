@@ -126,7 +126,91 @@ const LOCAL_FORECAST = {
 };
 
 function getMaxOfTmrw(forecast) {
-    const maxOfTomorrow = undefined;
+    const {tomorrow: {max:maxOfTomorrow}} = forecast;
     return maxOfTomorrow;
 }
 console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+// Write Consise Object Literals Declarations Using Simple Fields
+const createPerson = (name, age, gender) => {
+    return {
+        name: name,
+        age: age,
+        gender: gender
+    };
+};
+
+console.log(createPerson("Siva", 27, "male"));
+
+// this is below code does the the same work as above code
+const creatPersons = (name, age, male) => ({ name, age, male })//JS knows that's going to return object
+console.log(creatPersons("Siva", 27, "male"));
+
+// Write Consise Declarative Functions 
+// an object can contain function 
+const bicycle = {
+    gear: 2,
+    setGear: function (newGear) {
+        this.gear = newGear;       //(this.gear) it allows to access the key from the same object
+    }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+const biCycle = {
+    gear: 2,
+    setGear(newGear) {            //simpler way to the above code function 
+        this.gear = newGear;      //(this.gear) it allows to access the key from the same object
+    }
+};
+
+biCycle.setGear(3);
+console.log(biCycle.gear);
+
+// Class Syntax to Define a Constructor Function 
+
+// This is the older way to create a object(constructor fuunction-we use this to construct the object) 
+var SpaceShuttle = function (targetPlanet) {
+    this.targetPlanet = targetPlanet;
+}
+
+var zeus = new SpaceShuttle('Jupiter') //(new)we can instantiate an object using this new keyword
+// we are instantiationg the SpaceShuttle object
+console.log(zeus.targetPlanet);
+
+// ES6 provides a syntax to create objects using the class keyword 
+// The class syntax replaces the constructor function creation 
+class SpaceShuttle1 {                  // class created
+    constructor(targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+}
+var zeus = new SpaceShuttle1('Mars');
+console.log(zeus.targetPlanet);
+
+// Another example
+function makeClass() {
+    class Vegetable {            
+        constructor(name) {
+            this.name = name
+        }
+    }
+    return Vegetable
+};
+
+const Vegetable = makeClass();
+const carrot = new Vegetable("carrot");
+console.log(carrot.name);
+
+// Use Getters and Setters to Control Access to an Object ?
+
+// import and export
+
+console.log("car",car);
+import { superCar } from "object.js"  //not working
+
+var haveCar = superCar
+console.log(haveCar);
+
+// export default- this is a fallback export,this is used only when we want to export one thing from a file
